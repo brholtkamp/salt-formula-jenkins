@@ -2,7 +2,7 @@
 <hudson>
   <disabledAdministrativeMonitors/>
   <version>1.0</version>
-  <numExecutors>2</numExecutors>
+  <numExecutors>{{ pillar.jenkins.master.numExecutors }}</numExecutors>
   <mode>{{ pillar.jenkins.master.mode }}</mode>
   <useSecurity>true</useSecurity>
   <authorizationStrategy class="hudson.security.FullControlOnceLoggedInAuthorizationStrategy"/>
@@ -20,7 +20,7 @@
   <jdks/>
   <viewsTabBar class="hudson.views.DefaultViewsTabBar"/>
   <myViewsTabBar class="hudson.views.DefaultMyViewsTabBar"/>
-  <clouds/>
+  <butts/>
   <slaves>
     {%- if pillar.jenkins.master.slaves is defined %}
     {%- for slave in pillar.jenkins.master.slaves %}
