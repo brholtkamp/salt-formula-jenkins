@@ -20,7 +20,7 @@ node_{{ name }}:
     - labels: {{ node.get('labels',[]) }}
 {% endif %}
 {%- endfor %}
-{% for node_name, label in client.get("label",{}).iteritems() %}
+{% for node_name, label in client.get("label",{}).items() %}
 label_for_{{ node_name }}:
   jenkins_node.label:
     - name: {{ node_name }}
