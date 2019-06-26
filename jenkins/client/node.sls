@@ -1,6 +1,6 @@
 {#- It's not recommended to call this state explicitly as it may require plugins #}
 {% from "jenkins/map.jinja" import client with context %}
-{% for name, node in client.get("node",{}).iteritems() %}
+{% for name, node in client.get("node",{}).items() %}
 {% if node.get('name', name) == "master" %}
 master_configuration:
   jenkins_node.setup_master:
