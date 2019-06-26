@@ -5,7 +5,9 @@
   <numExecutors>{{ pillar.jenkins.master.numExecutors }}</numExecutors>
   <mode>{{ pillar.jenkins.master.mode }}</mode>
   <useSecurity>true</useSecurity>
-  <authorizationStrategy class="hudson.security.FullControlOnceLoggedInAuthorizationStrategy"/>
+  <authorizationStrategy class="hudson.security.FullControlOnceLoggedInAuthorizationStrategy">
+    <denyAnonymousReadAccess>true</denyAnonymousReadAccess/>
+  </authorizationStrategy>
   <securityRealm class="hudson.security.HudsonPrivateSecurityRealm">
     <disableSignup>true</disableSignup>
     <enableCaptcha>false</enableCaptcha>
@@ -20,7 +22,7 @@
   <jdks/>
   <viewsTabBar class="hudson.views.DefaultViewsTabBar"/>
   <myViewsTabBar class="hudson.views.DefaultMyViewsTabBar"/>
-  <butts/>
+  <clouds/>
   <slaves>
     {%- if pillar.jenkins.master.slaves is defined %}
     {%- for slave in pillar.jenkins.master.slaves %}
