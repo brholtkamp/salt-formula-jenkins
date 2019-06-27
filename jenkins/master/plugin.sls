@@ -8,7 +8,7 @@
 setup_jenkins_cli:
   cmd.run:
   - names:
-    - wget http://localhost:{{ master.http.port }}/jnlpJars/jenkins-cli.jar
+    - wget http://{{ master.http.network }}:{{ master.http.port }}/jnlpJars/jenkins-cli.jar
   - unless: "[ -f /root/jenkins-cli.jar ]"
   - cwd: /root
   - require:
