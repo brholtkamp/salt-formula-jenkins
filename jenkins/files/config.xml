@@ -22,7 +22,7 @@
   <jdks/>
   <viewsTabBar class="hudson.views.DefaultViewsTabBar"/>
   <myViewsTabBar class="hudson.views.DefaultMyViewsTabBar"/>
-  <clouds/>
+  <butts/>
   <slaves>
     {%- if pillar.jenkins.master.slaves is defined %}
     {%- for slave in pillar.jenkins.master.slaves %}
@@ -94,7 +94,7 @@
   </views>
   <primaryView>All</primaryView>
   <slaveAgentPort>54906</slaveAgentPort>
-  <label>master</label>
+  <label>{{ pillar.jenkins.master.label }}</label>
   <nodeProperties/>
   <globalNodeProperties/>
 </hudson>
